@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" fill="none">
+  <!-- BNDES icon -->
+  <g transform="translate(4, 8) scale(0.35)">
+    <path d="m260.27 397.77a53.91 53.91 0 0 0-45.13 24.38v74.68h74.76a54 54 0 0 0-29.63-99.06zm-45.13-55.11v62.34l61.69-61.68 91.87 91.87-61.7 61.64h62.3v-154.17z" fill="#008752" transform="translate(-215,-342)"/>
+    <path d="M298.8 84.5H236.5l61.7-61.6L206.3 124.8l61.7-61.7" fill="#002F6C"/>
+  </g>
+  <!-- BNDES text -->
+  <text x="65" y="32" font-family="'Lexend', sans-serif" font-size="20" font-weight="800" fill="#002F6C" letter-spacing="0.5">BNDES</text>
+  <!-- Garagem Pill Badge -->
+  <rect x="145" y="16" width="110" height="22" rx="4" fill="#008752"/>
+  <text x="200" y="31" font-family="'Lexend', sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">GARAGEM</text>
+  <!-- Subtitle -->
+  <text x="65" y="48" font-family="'Lexend', sans-serif" font-size="8.5" font-weight="500" fill="#555" letter-spacing="0.3">PROGRAMA DE ACELERAÇÃO DE STARTUPS</text>
+</svg>

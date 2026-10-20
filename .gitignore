@@ -1,0 +1,7 @@
+*.py
+*.log
+manual_pages/
+*.pdf
+preview_logos.html
+logos_preview.html
+screenshot*

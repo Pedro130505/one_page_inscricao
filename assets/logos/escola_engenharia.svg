@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" fill="none">
+  <g transform="translate(0, 6)">
+    <rect x="2" y="2" width="44" height="44" rx="6" fill="#014B76"/>
+    <path d="M12 34V14H24C28 14 31 16 31 20C31 23 29 25 25 26L33 34H26L19 27H17V34H12Z" fill="#549EB7"/>
+    <path d="M17 19V23H24C25.5 23 26.5 22.2 26.5 21C26.5 19.8 25.5 19 24 19H17Z" fill="#FFFFFF"/>
+    <circle cx="34" cy="14" r="3" fill="#CD181E"/>
+  </g>
+  <text x="56" y="26" font-family="'Lexend', sans-serif" font-size="14" font-weight="700" fill="#014B76">ESCOLA DE ENGENHARIA</text>
+  <text x="56" y="40" font-family="'Lexend', sans-serif" font-size="10" font-weight="600" fill="#549EB7" letter-spacing="0.5">UFMG • DESDE 1911</text>
+</svg>
