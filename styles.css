@@ -550,10 +550,11 @@ a {
 }
 
 .partner-logo-item {
-  height: 38px;
-  max-width: 140px;
+  height: 42px;
+  max-width: 160px;
   object-fit: contain;
-  opacity: 0.9;
+  opacity: 1;
+  border-radius: 6px;
   transition: var(--transition);
 }
 
