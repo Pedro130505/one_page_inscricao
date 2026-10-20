@@ -245,7 +245,7 @@ function handleProfessorSubmit(form) {
   const tel = document.getElementById('prof-tel').value.trim();
   const depto = document.getElementById('prof-depto').value;
   const labs = document.getElementById('prof-labs').value.trim();
-  const interesse = document.getElementById('prof-interesse').value;
+  
 
   const esp1 = document.getElementById('prof-esp-1').value.trim();
   const esp2 = document.getElementById('prof-esp-2').value.trim();
@@ -270,7 +270,7 @@ function handleProfessorSubmit(form) {
     departamento: depto,
     laboratorios: labs || 'Não informado',
     especialidades: especialidades.join(', '),
-    interesse,
+    
     dataRegistro: new Date().toISOString()
   };
 
