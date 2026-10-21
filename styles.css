@@ -949,7 +949,7 @@ a {
 /* Tabs de Seleção */
 .reg-tabs-bar {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   background: #f1f5f9;
   padding: 6px;
   border-bottom: 1px solid var(--border-color);

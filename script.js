@@ -203,6 +203,7 @@ function initPhoneMasks() {
 function initForms() {
   const formProf = document.getElementById('form-professor');
   const formLab = document.getElementById('form-laboratorio');
+  const formAluno = document.getElementById('form-aluno');
 
   if (formProf) {
     formProf.addEventListener('submit', (e) => {
@@ -215,6 +216,13 @@ function initForms() {
     formLab.addEventListener('submit', (e) => {
       e.preventDefault();
       handleLabSubmit(formLab);
+    });
+  }
+
+  if (formAluno) {
+    formAluno.addEventListener('submit', (e) => {
+      e.preventDefault();
+      handleAlunoSubmit(formAluno);
     });
   }
 
@@ -271,6 +279,31 @@ function handleProfessorSubmit(form) {
     laboratorios: labs || 'Não informado',
     especialidades: especialidades.join(', '),
     
+    dataRegistro: new Date().toISOString()
+  };
+
+  saveRegistration(registrationData);
+  showTicketModal(registrationData);
+  form.reset();
+}
+
+
+function handleAlunoSubmit(form) {
+  const nome = document.getElementById('aluno-nome').value.trim();
+  const curso = document.getElementById('aluno-curso').value.trim();
+
+  if (!nome || !curso) {
+    alert('Por favor, preencha seu nome e curso.');
+    return;
+  }
+
+  const regId = 'UFMG-ALU-' + Math.floor(1000 + Math.random() * 9000);
+  const registrationData = {
+    tipo: 'Aluno(a) / Estudante',
+    id: regId,
+    nome,
+    curso,
+    departamento: curso,
     dataRegistro: new Date().toISOString()
   };
 
@@ -338,7 +371,10 @@ function showTicketModal(data) {
   document.getElementById('ticket-display-code').textContent = `CÓDIGO DE CREDENCIAMENTO: ${data.id}`;
 
   const infoSecondary = document.getElementById('ticket-display-sub');
-  if (data.tipo.includes('Laboratório')) {
+  if (data.tipo.includes('Aluno')) {
+    document.getElementById('ticket-display-depto').textContent = `Curso: ${data.curso}`;
+    infoSecondary.textContent = `Estudante da UFMG | Credenciamento Confirmado`;
+  } else if (data.tipo.includes('Laboratório')) {
     infoSecondary.textContent = `Responsável: ${data.responsavel} | Oferta: "${data.ofertaIndustria}"`;
   } else {
     infoSecondary.textContent = `Especialidades: ${data.especialidades} ${data.laboratorios !== 'Não informado' ? `| Lab(s): ${data.laboratorios}` : ''}`;

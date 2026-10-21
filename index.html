@@ -127,7 +127,7 @@
                 </div>
                 <div>
                   <div class="meta-title">Público Convidado</div>
-                  <div class="meta-value">Professores & Laboratórios</div>
+                  <div class="meta-value">Professores, Labs & Alunos</div>
                   <div class="meta-sub">Vagas Limitadas • Entrada Franca</div>
                 </div>
               </div>
@@ -311,11 +311,15 @@
           <div class="reg-tabs-bar">
             <button type="button" class="tab-btn active" data-target="panel-professor">
               <span class="tab-icon">👨‍🏫</span>
-              <span>Sou Professor(a) / Pesquisador(a)</span>
+              <span>Sou Professor(a)</span>
             </button>
             <button type="button" class="tab-btn" data-target="panel-laboratorio">
               <span class="tab-icon">🔬</span>
-              <span>Represento um Laboratório / Núcleo</span>
+              <span>Represento um Lab</span>
+            </button>
+            <button type="button" class="tab-btn" data-target="panel-aluno">
+              <span class="tab-icon">🎓</span>
+              <span>Sou Aluno(a)</span>
             </button>
           </div>
 
@@ -448,6 +452,51 @@
 
               </form>
 
+            </div>
+
+            
+            <!-- PAINEL 3: ALUNO (APENAS NOME E CURSO CONFORME SOLICITADO) -->
+            <div id="panel-aluno" class="form-panel">
+              <div class="form-instruction">
+                <strong>Inscrição de Estudante:</strong> Preencha seu nome e curso para garantir seu credenciamento e presença no evento.
+              </div>
+
+              <form id="form-aluno">
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label class="form-label" for="aluno-nome">Nome Completo <span class="required">*</span></label>
+                    <input type="text" id="aluno-nome" class="form-input" placeholder="Ex: Lucas Henrique Santos" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="aluno-curso">Curso de Graduação ou Pós-Graduação <span class="required">*</span></label>
+                    <input type="text" id="aluno-curso" list="cursos-list" class="form-input" placeholder="Ex: Engenharia Mecânica" required>
+                    <datalist id="cursos-list">
+                      <option value="Engenharia Mecânica">
+                      <option value="Engenharia Elétrica">
+                      <option value="Engenharia de Controle e Automação">
+                      <option value="Engenharia de Produção">
+                      <option value="Engenharia Química">
+                      <option value="Engenharia Civil">
+                      <option value="Engenharia Aeroespacial">
+                      <option value="Engenharia de Sistemas">
+                      <option value="Engenharia Ambiental">
+                      <option value="Engenharia Metalúrgica">
+                      <option value="Engenharia de Minas">
+                      <option value="Ciência da Computação">
+                      <option value="Sistemas de Informação">
+                      <option value="Pós-Graduação em Engenharia (Mestrado/Doutorado)">
+                      <option value="Outro Curso da UFMG">
+                    </datalist>
+                  </div>
+                </div>
+
+                <div class="form-submit-row">
+                  <button type="submit" class="btn-submit-reg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    Confirmar Minha Inscrição como Aluno(a)
+                  </button>
+                </div>
+              </form>
             </div>
 
             <!-- PAINEL 2: LABORATÓRIO (CONFORME O ÁUDIO) -->
