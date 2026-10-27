@@ -44,7 +44,7 @@ function initCountdown() {
       minutesEl.textContent = '00';
       secondsEl.textContent = '00';
       const badge = document.querySelector('.countdown-header-tag');
-      if (badge) badge.textContent = '🔴 Evento Iniciado / Em Andamento';
+      if (badge) badge.textContent = 'Evento Iniciado / Em Andamento';
       return;
     }
 
@@ -291,9 +291,13 @@ function handleProfessorSubmit(form) {
 function handleAlunoSubmit(form) {
   const nome = document.getElementById('aluno-nome').value.trim();
   const curso = document.getElementById('aluno-curso').value.trim();
+  const emailInput = document.getElementById('aluno-email');
+  const telInput = document.getElementById('aluno-tel');
+  const email = emailInput ? emailInput.value.trim() : '';
+  const tel = telInput ? telInput.value.trim() : '';
 
-  if (!nome || !curso) {
-    alert('Por favor, preencha seu nome e curso.');
+  if (!nome || !curso || !email) {
+    alert('Por favor, preencha todos os campos obrigatórios (nome, curso e e-mail).');
     return;
   }
 
@@ -303,6 +307,8 @@ function handleAlunoSubmit(form) {
     id: regId,
     nome,
     curso,
+    email,
+    telefone: tel,
     departamento: curso,
     dataRegistro: new Date().toISOString()
   };
@@ -349,6 +355,7 @@ function handleLabSubmit(form) {
 }
 
 function saveRegistration(data) {
+  // Salva no localStorage para redundância local no dispositivo do usuário
   try {
     const list = JSON.parse(localStorage.getItem('ufmg_hub_bndes_inscricoes') || '[]');
     list.push(data);
@@ -356,6 +363,27 @@ function saveRegistration(data) {
   } catch (err) {
     console.error('Erro ao salvar no localStorage:', err);
   }
+
+  // Envia centralizadamente para o banco de dados do UFMG Hub (ERP)
+  fetch('/api/inscricao', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then(async (response) => {
+      if (!response.ok) {
+        const text = await response.text();
+        console.warn('Falha no envio da inscrição para o servidor:', text);
+      } else {
+        const resData = await response.json();
+        console.log('Inscrição sincronizada com sucesso no banco de dados:', resData);
+      }
+    })
+    .catch((err) => {
+      console.warn('Inscrição mantida em fallback local devido a erro de conexão:', err);
+    });
 }
 
 /* ==========================================================================
