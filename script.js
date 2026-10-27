@@ -447,7 +447,7 @@ function openGoogleCalendar() {
     "Apresentação do funcionamento do programa e lançamento do edital de 100 vagas.\n\n" +
     "Realização: UFMG Hub, BNDES Garagem e Escola de Engenharia da UFMG."
   );
-  const location = encodeURIComponent("Auditório da Escola de Engenharia da UFMG - Av. Pres. Antônio Carlos, 6627, Pampulha, Belo Horizonte - MG");
+  const location = encodeURIComponent("Sala de Seminário T005 - Escola de Engenharia da UFMG, Av. Pres. Antônio Carlos, 6627, Pampulha, Belo Horizonte - MG");
   const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261029T140000Z/20261029T153000Z&details=${details}&location=${location}`;
   window.open(gCalUrl, '_blank');
 }
@@ -464,7 +464,7 @@ function downloadIcsCalendar() {
     'DTEND:20261029T153000Z',
     'SUMMARY:BNDES Garagem na Escola de Engenharia da UFMG',
     'DESCRIPTION:Palestra BNDES Garagem: da engenharia ao impacto — transformando soluções em negócios. Apresentação do edital de 100 vagas.',
-    'LOCATION:Auditório da Escola de Engenharia da UFMG, Av. Pres. Antônio Carlos 6627, Belo Horizonte - MG',
+    'LOCATION:Sala de Seminário T005, Escola de Engenharia da UFMG, Av. Pres. Antônio Carlos 6627, Belo Horizonte - MG',
     'STATUS:CONFIRMED',
     'END:VEVENT',
     'END:VCALENDAR'
